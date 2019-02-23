@@ -4,7 +4,7 @@ Using only the user's WordPress cookie and a MySql connection (ie: not wp-load.p
 
 ## Background
 
-I wrote this because I like WordPress as a CMS, some of the plugins available for it, and its basic access control. Using it allows me to focus my time on writing applications, rather than the support structure around those applications.
+I wrote this because I like WordPress as a CMS, some of the plugins available for it, and its basic access control. Using WordPress allows me to focus my time on writing applications, rather than the support structure around those applications.
 
 You would normally authenticate to WordPress, from _outside_ of WordPress, by including wp-load.php. The problem is, I don't like how slow it is, and I'm sure there's a ton of stuff in there I simply don't need. All I need is what's returned by this function, which was designed to authenticate as quickly as possible.
 
