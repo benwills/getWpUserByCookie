@@ -78,11 +78,11 @@ function getWpUserByCookie() : ?array
 	if (!isset($sess[$token_hash]['expiration'])) return null;
 	if ($sess[$token_hash]['expiration'] > time()){
 		return [
-			'id'    => $user['id'],
-			'name'  => $user['name'],
-			'email' => $user['email'],
+			'id'       => $user['id'],
+			'name'     => $user['name'],
+			'email'    => $user['email'],
 			'username' => $username,
-			'caps'  => unserialize($user['caps']),
+			'caps'     => unserialize($user['caps']),
 		];
 	}
 	return null;
