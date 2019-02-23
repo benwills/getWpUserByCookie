@@ -49,17 +49,17 @@ function getWpUserByCookie() : ?array
 	                 wp_users.display_name as name,
 	                 wp_users.user_email   as email,
 	                 wp_users.ID           as id
-						FROM wp_users
-					    LEFT JOIN wp_usermeta as sess ON sess.user_id = wp_users.ID
-					    	AND sess.meta_key = 'session_tokens'
-					    LEFT JOIN wp_usermeta as caps ON caps.user_id = wp_users.ID
-					    	AND caps.meta_key = 'wp_capabilities'
-						WHERE user_login = '$username' LIMIT 1";
+	          FROM wp_users
+	          	LEFT JOIN wp_usermeta as sess ON sess.user_id = wp_users.ID
+	          		AND sess.meta_key = 'session_tokens'
+	          	LEFT JOIN wp_usermeta as caps ON caps.user_id = wp_users.ID
+	          		AND caps.meta_key = 'wp_capabilities'
+	          WHERE user_login = '$username' LIMIT 1";
 	$result = mysqli_query($conn,$query);
 	$user   = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 	if (   !$user
-		  || !isset($user)
+	    || !isset($user)
 	    || !is_array($user)
 	    || (0 == count($user)))
 		return null;
