@@ -58,10 +58,7 @@ function getWpUserByCookie() : ?array
 	$result = mysqli_query($conn,$query);
 	$user   = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-	if (   !$user
-	    || !isset($user)
-	    || !is_array($user)
-	    || (0 == count($user)))
+	if (empty($user))
 		return null;
 
 	$key_data  = "$username|".substr($user['pass'],8,4)."|$expires|$token";
